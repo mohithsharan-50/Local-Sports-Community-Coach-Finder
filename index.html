@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sideline — find your people, find your coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo">◐</span>
+      <div>
+        <h1>Sideline</h1>
+        <p class="tag">Clubs, academies &amp; coaches near you — picked by people who actually play.</p>
+      </div>
+    </div>
+    <button id="locate" class="btn">📍 Use my location</button>
+  </header>
+
+  <main class="layout">
+    <aside class="panel">
+      <section class="filters">
+        <label>Search
+          <input id="q" type="search" placeholder="Name, coach, neighbourhood…">
+        </label>
+
+        <div class="field">
+          <span class="label">Sport</span>
+          <div id="sports" class="chips"></div>
+        </div>
+
+        <label>Max budget <output id="budgetOut"></output>
+          <input id="budget" type="range" min="0" max="8000" step="250" value="8000">
+        </label>
+
+        <label>Minimum rating
+          <select id="rating">
+            <option value="0">Any rating</option>
+            <option value="3">3★ and up</option>
+            <option value="4">4★ and up</option>
+            <option value="4.5">4.5★ and up</option>
+          </select>
+        </label>
+
+        <label>Within <output id="radiusOut"></output>
+          <input id="radius" type="range" min="1" max="25" step="1" value="10">
+        </label>
+
+        <div class="field">
+          <span class="label">Show me</span>
+          <div class="chips" id="kinds">
+            <button class="chip on" data-kind="club">Clubs</button>
+            <button class="chip on" data-kind="academy">Academies</button>
+            <button class="chip on" data-kind="trainer">Trainers</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="results-head">
+        <strong id="count">0 places</strong>
+        <select id="sort">
+          <option value="distance">Closest first</option>
+          <option value="rating">Best rated</option>
+          <option value="price">Cheapest</option>
+        </select>
+      </div>
+      <p id="status" class="status">Finding where you are…</p>
+      <ul id="list" class="list"></ul>
+    </aside>
+
+    <div id="map" class="map" aria-label="Map of nearby training spots"></div>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+// Sample listings. Positions are offsets (in km) from wherever the visitor is,
+// so the map always has something nearby to show. Swap this for a real API later.
+const CURRENCY = "₹";
+
+const SPORT_ICONS = {
+  Football: "⚽", Cricket: "🏏", Tennis: "🎾", Badminton: "🏸",
+  Swimming: "🏊", Basketball: "🏀", Running: "🏃", Boxing: "🥊", Yoga: "🧘",
+};
+
+const PLACES = [
+  { name: "Sunday Strikers FC", kind: "club", sport: "Football", price: 1200, rating: 4.6, reviews: 84, dx: 1.2, dy: -0.8,
+    blurb: "Friendly 7-a-side on weekends. Beginners welcome — nobody shouts at you for missing an open goal." },
+  { name: "Greenfield Cricket Academy", kind: "academy", sport: "Cricket", price: 3500, rating: 4.4, reviews: 132, dx: -2.5, dy: 1.6,
+    blurb: "Turf nets, bowling machines and two ex-Ranji coaches. Kids' batches fill fast in summer." },
+  { name: "Priya Nair", kind: "trainer", sport: "Tennis", price: 2800, rating: 4.9, reviews: 41, dx: 0.6, dy: 2.1,
+    blurb: "Patient with adult beginners. Early-morning slots, and she'll fix your backhand without making it weird." },
+  { name: "Shuttle House", kind: "club", sport: "Badminton", price: 900, rating: 4.1, reviews: 210, dx: -0.9, dy: -1.4,
+    blurb: "Six wooden courts, decent lighting, and a regular 7pm crowd that's always short a fourth." },
+  { name: "Blue Lane Aquatics", kind: "academy", sport: "Swimming", price: 4200, rating: 4.7, reviews: 97, dx: 3.4, dy: 0.4,
+    blurb: "Heated pool and certified instructors. Great if you're nervous in water — they go slow." },
+  { name: "Rahul 'Coach R' Menon", kind: "trainer", sport: "Boxing", price: 3000, rating: 4.8, reviews: 58, dx: -3.1, dy: -2.2,
+    blurb: "Fitness boxing and proper technique. Expect to be sore, in a good way." },
+  { name: "Hoops After Dark", kind: "club", sport: "Basketball", price: 600, rating: 3.9, reviews: 46, dx: 2.0, dy: -2.9,
+    blurb: "Pickup games under the flyover court, Tue/Thu nights. Bring water, the cooler is usually empty." },
+  { name: "Dawn Runners Collective", kind: "club", sport: "Running", price: 0, rating: 4.5, reviews: 175, dx: -1.6, dy: 3.2,
+    blurb: "Free 5K every Saturday at 6am. All paces, and someone always stays back with the last runner." },
+  { name: "Meera Iyer", kind: "trainer", sport: "Yoga", price: 2200, rating: 4.7, reviews: 63, dx: 0.3, dy: -0.5,
+    blurb: "Small-group sessions in a quiet studio. Good for desk backs and stiff hamstrings." },
+  { name: "Elite Football Academy", kind: "academy", sport: "Football", price: 5000, rating: 4.2, reviews: 88, dx: 5.6, dy: 3.8,
+    blurb: "Structured U-10 to U-18 programmes with match exposure. Pricier, but the coaching is serious." },
+  { name: "Ace Smash Badminton School", kind: "academy", sport: "Badminton", price: 2600, rating: 4.3, reviews: 71, dx: -4.8, dy: 0.9,
+    blurb: "Footwork drills that actually stick. Parents can watch from the gallery." },
+  { name: "Old Town Tennis Club", kind: "club", sport: "Tennis", price: 1800, rating: 3.6, reviews: 29, dx: 6.9, dy: -4.1,
+    blurb: "Clay courts that have seen better days, but the members are lovely and the chai is good." },
+  { name: "Arjun Das", kind: "trainer", sport: "Swimming", price: 3200, rating: 4.4, reviews: 22, dx: -6.2, dy: -5.5,
+    blurb: "One-on-one lessons at your society pool. Specialises in adults who never learned as kids." },
+  { name: "Boundary Line CC", kind: "club", sport: "Cricket", price: 1500, rating: 4.0, reviews: 54, dx: 8.5, dy: 6.3,
+    blurb: "Weekend leather-ball league team. Always looking for a reliable keeper." },
+  { name: "Fight Lab", kind: "academy", sport: "Boxing", price: 4500, rating: 4.6, reviews: 119, dx: 10.4, dy: -1.7,
+    blurb: "Full gym with rings and bags. Women-only batches on weekday mornings." },
+  { name: "Sana Qureshi", kind: "trainer", sport: "Running", price: 1500, rating: 4.9, reviews: 37, dx: 1.9, dy: 6.6,
+    blurb: "Marathon coach with custom plans. Will gently talk you out of running injured." },
+  { name: "Lotus Flow Studio", kind: "academy", sport: "Yoga", price: 2800, rating: 3.8, reviews: 66, dx: -9.1, dy: 7.2,
+    blurb: "Teacher-training school with drop-in classes. Busy on weekends, calmer midweek." },
+  { name: "Riverside Ballers", kind: "academy", sport: "Basketball", price: 3800, rating: 4.5, reviews: 48, dx: -12.6, dy: -3.4,
+    blurb: "Indoor courts and a coach who played college ball abroad. Teens' batch is the highlight." },
+];
